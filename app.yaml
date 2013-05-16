@@ -1,0 +1,12 @@
+application: pwd
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /(.*\.(css|js|png|gif))
+  static_files: static/\1
+  upload: static/(.*\.(css|js|png|gif))
+- url: /.*
+  script: pwd.py
+
